@@ -1,0 +1,36 @@
+源码
+
+https://github.com/liulipeng/yii2-app-advanced
+
+更新：
+
+2016-06-21 更新安装流程，以更简单的方式安装项目(和Yii2的模板安装方式相同，更接地气)
+
+2016-07-12 新增后台操作日志模块
+
+2016-07-13 更新安装教程
+
+安装
+1. 安装/izyue/Yii2模板
+php composer.phar global require "fxp/composer-asset-plugin:~1.1.1"
+php composer.phar create-project --prefer-dist izyue/yii2-app-advanced advanced
+如果composer是全局命令，请执行下面代码
+
+composer global require "fxp/composer-asset-plugin:~1.1.1"
+composer create-project --prefer-dist izyue/yii2-app-advanced advanced
+2. 安装Composer
+composer install
+3. 初始化
+php init
+4. 导入表结构(migration)
+需要顺序执行
+
+导入rbac migration
+
+php yii migrate --migrationPath=@yii/rbac/migrations
+导入admin migration
+
+php yii migrate --migrationPath=@izyue/admin/migrations
+后台登录密码
+User: admin
+Password: 123456
